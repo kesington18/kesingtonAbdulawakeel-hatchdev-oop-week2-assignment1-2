@@ -25,13 +25,13 @@ var HashMap = /** @class */ (function () {
     };
     HashMap.prototype.delete = function (key) {
         var index = this.hash(key);
-        // delete this.buckets[index];
+        delete this.buckets[index];
         // or
-        if (this.buckets[index] && this.buckets[index][0] === key) {
+        /* if (this.buckets[index] && this.buckets[index]![0] === key) {
             this.buckets[index] = undefined;
-            return true;
+            return true
         }
-        return false;
+        return false; */
     };
     return HashMap;
 }());
@@ -39,5 +39,6 @@ var myhashMap = new HashMap();
 myhashMap.set("name", "fathia");
 myhashMap.set("age", 20);
 myhashMap.set("shape", "figure 8");
+console.log(myhashMap);
 console.log(myhashMap.delete("name"));
 console.log(myhashMap);

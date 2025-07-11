@@ -3,7 +3,7 @@ class HashMap<K, V> {
     private size: number;
 
     constructor(size: number = 10) {
-        this.size =size;
+        this.size = size;
         this.buckets = new Array(this.size);
     }
 
@@ -28,15 +28,15 @@ class HashMap<K, V> {
         return undefined;
     }
 
-    delete(key: K): boolean{
+    delete(key: K){
         const index = this.hash(key);
-        // delete this.buckets[index];
+        delete this.buckets[index];
         // or
-        if (this.buckets[index] && this.buckets[index]![0] === key) {
+        /* if (this.buckets[index] && this.buckets[index]![0] === key) {
             this.buckets[index] = undefined;
             return true
         }
-        return false;
+        return false; */
     }
 }
 
@@ -45,5 +45,6 @@ myhashMap.set("name", "fathia");
 myhashMap.set("age", 20);
 myhashMap.set("shape", "figure 8");
 
+console.log(myhashMap);
 console.log(myhashMap.delete("name"));
 console.log(myhashMap);
