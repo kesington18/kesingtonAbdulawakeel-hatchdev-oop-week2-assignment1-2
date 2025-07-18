@@ -1,4 +1,4 @@
-var groupAnagrams = function (strs) {
+function groupAnagrams(strs) {
     var map = new Map();
     for (var _i = 0, strs_1 = strs; _i < strs_1.length; _i++) {
         var word = strs_1[_i];
@@ -6,7 +6,7 @@ var groupAnagrams = function (strs) {
         if (!map.has(key)) {
             map.set(key, []);
         }
-        map.get(key).push(word);
+        map.get(key).push(word); // Use `!` to tell TypeScript we're sure it's not undefined
     }
     return Array.from(map.values());
-};
+}
